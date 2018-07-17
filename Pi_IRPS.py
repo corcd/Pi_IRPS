@@ -20,19 +20,18 @@ try:
     i = 0
     value = 0
     oldValue = 0
-    oldChange = 0
     while True:
         while GPIO.input(Pin) == GPIO.LOW:
             continue
         while GPIO.input(Pin) == GPIO.HIGH:
             continue
-        while i < 40:
+        while i < 8:
             k = 0
             while GPIO.input(Pin) == GPIO.LOW:
                 continue
             while GPIO.input(Pin) == GPIO.HIGH:
                 k += 1
-                if k > 8:
+                if k > 1000:
                     break
             if k < 8:
                 data.append(0)
@@ -48,7 +47,7 @@ try:
 
         rawValue = num
         value = alpha * oldValue + (1 - alpha) * rawValue;
-        print(rawValue,",",value)
+        print(rawValue,value)
         oldValue = value
         time.sleep(2)
 
