@@ -31,7 +31,7 @@ try:
                 continue
             while GPIO.input(Pin) == GPIO.HIGH:
                 k += 1
-                if k > 1000:
+                if k > 100:
                     break
             if k < 8:
                 data.append(0)
