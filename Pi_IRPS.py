@@ -17,15 +17,15 @@ try:
     print("IRPS Online")
     i = 0
     while True:
-        while GPIO.input(channel) == GPIO.LOW:
+        while GPIO.input(Pin) == GPIO.LOW:
             continue
-        while GPIO.input(channel) == GPIO.HIGH:
+        while GPIO.input(Pin) == GPIO.HIGH:
             continue
         while i < 40:
             k = 0
-            while GPIO.input(channel) == GPIO.LOW:
+            while GPIO.input(Pin) == GPIO.LOW:
                 continue
-            while GPIO.input(channel) == GPIO.HIGH:
+            while GPIO.input(Pin) == GPIO.HIGH:
                 k += 1
                 if k > 100:
                     break
